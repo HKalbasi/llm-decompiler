@@ -1,0 +1,7 @@
+[package]
+name = "try14"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+la-arena = "0.3.1"

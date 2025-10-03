@@ -1,5 +1,8 @@
 use std::str::FromStr;
 
+use ast_utils::AstRepr;
+use repr::hir::ItemKind;
+
 #[derive(Debug, PartialEq)]
 pub enum RefactoringAction {
     RemoveUnusedArgument(String),
@@ -15,8 +18,16 @@ pub enum RefactoringAction {
 
 impl RefactoringAction {
     /// Validates if the action produces the expected result when applied to the original code
-    pub fn validate(&self, original_code: &str, expected_result: &str) -> Result<(), String> {
-        Ok(())
+    pub fn validate(&self, original_code: &str) -> anyhow::Result<String> {
+        let ast = AstRepr::new_single_file(original_code)?;
+        let hir = repr::hir::HirCtx::new(&ast).lower_to_hir();
+
+        let hir = *hir.into_iter().find_map(|it| match it.kind {
+            ItemKind::Func(func_def) => Some(func_def),
+            _ => None,
+        }).unwrap();
+
+        Ok(original_code.to_owned())
     }
 }
 

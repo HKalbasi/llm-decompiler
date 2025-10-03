@@ -10,7 +10,6 @@ use action::RefactoringAction;
 #[derive(Debug, Serialize, Deserialize)]
 struct Entry {
     action: String,
-    result: String,
 }
 
 fn main() {
@@ -23,21 +22,22 @@ fn main() {
     let action: RefactoringAction = entry.action.parse().unwrap();
 
     // Validate the action before applying it
-    match action.validate(&old, &entry.result) {
-        Ok(()) => {
+    let result = match action.validate(&old) {
+        Ok(result) => {
             println!("Action validated successfully.");
+            result
         }
         Err(e) => {
             eprintln!("Error during validation: {}", e);
             std::process::exit(1);
         }
-    }
+    };
 
-    println!("Old:\n{old}\nAction: {action:?}\nResult:\n{}", entry.result);
+    println!("Old:\n{old}\nAction: {action:?}\nResult:\n{}", result);
 
     write!(log_file, "{action:?}").unwrap();
 
-    std::fs::write("job.c", entry.result).unwrap();
+    std::fs::write("job.c", result).unwrap();
 
     println!("Result has been written into the file.");
 }
