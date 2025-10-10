@@ -1,0 +1,250 @@
+\@doanenote {1}
+macro:->\lr
+{multispectral}
+\@endanenote 
+\@doanenote {2}
+macro:->\lr
+{hyper-spectral}
+\@endanenote 
+\@doanenote {3}
+macro:->\lr
+{classification}
+\@endanenote 
+\@doanenote {4}
+macro:->\lr
+{labeling}
+\@endanenote 
+\@doanenote {5}
+macro:->\lr
+{segmentation}
+\@endanenote 
+\@doanenote {6}
+macro:->\lr
+{curse
+of
+dimensionality}
+\@endanenote 
+\@doanenote {7}
+macro:->\lr
+{feature
+extraction}
+\@endanenote 
+\@doanenote {8}
+macro:->\lr
+{change
+detection}
+\@endanenote 
+\@doanenote {9}
+macro:->\lr
+{clustering}
+\@endanenote 
+\@doanenote {10}
+macro:->\lr
+{data
+visualizasion}
+\@endanenote 
+\@doanenote {11}
+macro:->\lr
+{signal
+unmixing}
+\@endanenote 
+\@doanenote {12}
+macro:->\lr
+{endmember}
+\@endanenote 
+\@doanenote {13}
+macro:->\lr
+{model
+inversion}
+\@endanenote 
+\@doanenote {14}
+macro:->\lr
+{segmentation}
+\@endanenote 
+\@doanenote {15}
+macro:->\lr
+{unsupervised}
+\@endanenote 
+\@doanenote {16}
+macro:->\lr
+{one
+against
+one}
+\@endanenote 
+\@doanenote {17}
+macro:->\lr
+{one
+against
+all}
+\@endanenote 
+\@doanenote {18}
+macro:->\lr
+{Principal
+Component
+Analysis}
+\@endanenote 
+\@doanenote {19}
+macro:->\lr
+{Isomap}
+\@endanenote 
+\@doanenote {20}
+macro:->\lr
+{residual
+variance}
+\@endanenote 
+\@doanenote {21}
+macro:->\lr
+{Locally
+Linear
+Embedding}
+\@endanenote 
+\@doanenote {22}
+macro:->\lr
+{Local
+Tangent
+Space
+Allignment}
+\@endanenote 
+\@doanenote {23}
+macro:->\lr
+{Laplacian
+Eigenmaps}
+\@endanenote 
+\@doanenote {24}
+macro:->\lr
+{supervised
+learning}
+\@endanenote 
+\@doanenote {25}
+macro:->\lr
+{semi-supervised
+learning}
+\@endanenote 
+\@doanenote {26}
+macro:->\lr
+{transductive}
+\@endanenote 
+\@doanenote {27}
+macro:->\lr
+{inductive}
+\@endanenote 
+\@doanenote {28}
+macro:->\lr
+{knowledge
+transfer}
+\@endanenote 
+\@doanenote {29}
+macro:->\lr
+{generative}
+\@endanenote 
+\@doanenote {30}
+macro:->\lr
+{Expectation
+Maximization}
+\@endanenote 
+\@doanenote {31}
+macro:->\lr
+{Support
+Vector
+Machine}
+\@endanenote 
+\@doanenote {32}
+macro:->\lr
+{transductive
+SVM}
+\@endanenote 
+\@doanenote {33}
+macro:->\lr
+{k-means}
+\@endanenote 
+\@doanenote {34}
+macro:->\lr
+{Suppoer
+Vector
+Domain
+Description
+(SVDD)}
+\@endanenote 
+\@doanenote {35}
+macro:->\lr
+{Tikhonov}
+\@endanenote 
+\@doanenote {36}
+macro:->\lr
+{Local
+and
+General
+Consistency}
+\@endanenote 
+\@doanenote {37}
+macro:->\lr
+{regularization}
+\@endanenote 
+\@doanenote {38}
+macro:->\lr
+{loss
+function}
+\@endanenote 
+\@doanenote {39}
+macro:->\lr
+{Reproducing
+Kernel
+Hilbert
+Space
+(RKHS)}
+\@endanenote 
+\@doanenote {40}
+macro:->\lr
+{hinge
+loss
+function}
+\@endanenote 
+\@doanenote {41}
+macro:->{\lr
+{Aviris}}
+\@endanenote 
+\@doanenote {42}
+macro:->\lr
+{NASA
+:
+National
+Aeronautics
+and
+Space
+Administration}
+\@endanenote 
+\@doanenote {43}
+macro:->\lr
+{Indian
+Pine
+Teset
+Site}
+\@endanenote 
+\@doanenote {44}
+macro:->\lr
+{Gaussian
+Process
+Learning
+Method}
+\@endanenote 
+\@doanenote {45}
+macro:->\lr
+{hinge
+loss
+function}
+\@endanenote 
+\@doanenote {46}
+macro:->\lr
+{embedding
+space}
+\@endanenote 
+\@doanenote {47}
+macro:->\lr
+{Laplacian
+Diffusion
+Kernel}
+\@endanenote 
+\@doanenote {48}
+macro:->\lr
+{prior}
+\@endanenote 

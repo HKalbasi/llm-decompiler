@@ -1,0 +1,242 @@
+@INPROCEEDINGS{SLaDe,
+  author={Armengol-Estapé, Jordi and Woodruff, Jackson and Cummins, Chris and O'Boyle, Michael F.P.},
+  booktitle={2024 IEEE/ACM International Symposium on Code Generation and Optimization (CGO)}, 
+  title={SLaDe: A Portable Small Language Model Decompiler for Optimized Assembly}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={67-80},
+  keywords={Codes;Transformers;Security;Task analysis;Optimization;Standards;Engines;decompilation;neural decompilation;Transformer;language models;type inference},
+  doi={10.1109/CGO57630.2024.10444788}}
+
+@inproceedings{Coda,
+ author = {Fu, Cheng and Chen, Huili and Liu, Haolan and Chen, Xinyun and Tian, Yuandong and Koushanfar, Farinaz and Zhao, Jishen},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {H. Wallach and H. Larochelle and A. Beygelzimer and F. d\textquotesingle Alch\'{e}-Buc and E. Fox and R. Garnett},
+ pages = {},
+ publisher = {Curran Associates, Inc.},
+ title = {Coda: An End-to-End Neural Program Decompiler},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf},
+ volume = {32},
+ year = {2019}
+}
+
+@inproceedings{Variable_for_decompiled,
+author = {Jaffe, Alan and Lacomis, Jeremy and Schwartz, Edward J. and Le Goues, Claire and Vasilescu, Bogdan},
+title = {Meaningful variable names for decompiled code: a machine translation approach},
+year = {2018},
+isbn = {9781450357142},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3196321.3196330},
+doi = {10.1145/3196321.3196330},
+abstract = {When code is compiled, information is lost, including some of the structure of the original source code as well as local identifier names. Existing decompilers can reconstruct much of the original source code, but typically use meaningless placeholder variables for identifier names. Using variable names which are more natural in the given context can make the code much easier to interpret, despite the fact that variable names have no effect on the execution of the program. In theory, it is impossible to recover the original identifier names since that information has been lost. However, most code is natural: it is highly repetitive and predictable based on the context. In this paper we propose a technique that assigns variables meaningful names by taking advantage of this naturalness property. We consider decompiler output to be a noisy distortion of the original source code, where the original source code is transformed into the decompiler output. Using this noisy channel model, we apply standard statistical machine translation approaches to choose natural identifiers, combining a translation model trained on a parallel corpus with a language model trained on unmodified C code. We generate a large parallel corpus from 1.2 TB of C source code obtained from GitHub. Under the most conservative assumptions, our technique is still able to recover the original variable names up to 16.2\% of the time, which represents a lower bound for performance.},
+booktitle = {Proceedings of the 26th Conference on Program Comprehension},
+pages = {20–30},
+numpages = {11},
+location = {Gothenburg, Sweden},
+series = {ICPC '18}
+}
+
+@inproceedings{Testing_decompiler,
+author = {Liu, Zhibo and Wang, Shuai},
+title = {How far we have come: testing decompilation correctness of C decompilers},
+year = {2020},
+isbn = {9781450380089},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3395363.3397370},
+doi = {10.1145/3395363.3397370},
+abstract = {A C decompiler converts an executable (the output from a C compiler) into source code. The recovered C source code, once recompiled, will produce an executable with the same functionality as the original executable. With over twenty years of development, C decompilers have been widely used in production to support reverse engineering applications, including legacy software migration, security retrofitting, software comprehension, and to act as the first step in launching adversarial software exploitations. As the paramount component and the trust base in numerous cybersecurity tasks, C decompilers have enabled the analysis of malware, ransomware, and promoted cybersecurity professionals’ understanding of vulnerabilities in real-world systems.  In contrast to this flourishing market, our observation is that in academia, outputs of C decompilers (i.e., recovered C source code) are still not extensively used. Instead, the intermediate representations are often more desired for usage when developing applications such as binary security retrofitting. We acknowledge that such conservative approaches in academia are a result of widespread and pessimistic views on the decompilation correctness. However, in conventional software engineering and security research, how much of a problem is, for instance, reusing a piece of simple legacy code by taking the output of modern C decompilers?  In this work, we test decompilation correctness to present an up-to-date understanding regarding modern C decompilers. We detected a total of 1,423 inputs that can trigger decompilation errors from four popular decompilers, and with extensive manual effort, we identified 13 bugs in two open-source decompilers. Our findings show that the overly pessimistic view of decompilation correctness leads researchers to underestimate the potential of modern decompilers; the state-of-the-art decompilers certainly care about the functional correctness, and they are making promising progress. However, some tasks that have been studied for years in academia, such as type inference and optimization, still impede C decompilers from generating quality outputs more than is reflected in the literature. These issues rarely receive enough attention and can lead to great confusion that misleads users.},
+booktitle = {Proceedings of the 29th ACM SIGSOFT International Symposium on Software Testing and Analysis},
+pages = {475–487},
+numpages = {13},
+keywords = {Decompiler, Reverse Engineering, Software Testing},
+location = {Virtual Event, USA},
+series = {ISSTA 2020}
+}
+
+@inproceedings{Chatgpt_Java,
+    title = "{C}hat{GPT} as a {J}ava Decompiler",
+    author = "Mcdanel, Bradley  and
+      Liu, Zhanhao",
+    editor = "Gehrmann, Sebastian  and
+      Wang, Alex  and
+      Sedoc, Jo{\~a}o  and
+      Clark, Elizabeth  and
+      Dhole, Kaustubh  and
+      Chandu, Khyathi Raghavi  and
+      Santus, Enrico  and
+      Sedghamiz, Hooman",
+    booktitle = "Proceedings of the Third Workshop on Natural Language Generation, Evaluation, and Metrics (GEM)",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.gem-1.19/",
+    pages = "224--232",
+    abstract = "We propose a novel approach using instruction-tuned large language models (LLMs), such as ChatGPT, to automatically decompile entire Java classes. Our method relies only on a textual representation of the Java bytecode and corresponding unit tests generated from the bytecode. While no additional domain knowledge or fine-tuning is performed, we provide a single training example of this decompilation process in the model`s prompt. To overcome both compilation errors and test failures, we use an iterative prompting approach. We find that ChatGPT-4 is able to generate more human-readable output than existing software-based decompilers while achieving slightly lower pass rates on unit tests. Source code and datasets are available at \url{https://github.com/BradMcDanel/gpt-java-decompiler}."
+}
+
+@article{ٰBERT_variable,
+  title={Variable name recovery in decompiled binary code using constrained masked language modeling},
+  author={Banerjee, Pratyay and Pal, Kuntal Kumar and Wang, Fish and Baral, Chitta},
+  journal={arXiv preprint arXiv:2103.12801},
+  year={2021}
+}
+
+@article{llm4decompile,
+  title={LLM4Decompile: Decompiling Binary Code with Large Language Models},
+  author={Tan, Hanzhuo and Luo, Qi and Li, Jing and Zhang, Yuqun},
+  journal={arXiv preprint arXiv:2403.05286},
+  year={2024}
+}
+
+@inproceedings{ExeBench,
+author = {Armengol-Estap\'{e}, Jordi and Woodruff, Jackson and Brauckmann, Alexander and Magalh\~{a}es, Jos\'{e} Wesley de Souza and O'Boyle, Michael F. P.},
+title = {ExeBench: an ML-scale dataset of executable C functions},
+year = {2022},
+isbn = {9781450392730},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3520312.3534867},
+doi = {10.1145/3520312.3534867},
+abstract = {Machine-learning promises to transform compilation and software engineering, yet is frequently limited by the scope of available datasets. In particular, there is a lack of runnable, real-world datasets required for a range of tasks ranging from neural program synthesis to machine learning-guided program optimization. We introduce a new dataset, ExeBench, which attempts to address this. It tackles two key issues with real-world code: references to external types and functions and scalable generation of IO examples. ExeBench is the first publicly available dataset that pairs real-world C code taken from GitHub with IO examples that allow these programs to be run. We develop a toolchain that scrapes GitHub, analyzes the code, and generates runnable snippets of code. We analyze our benchmark suite using several metrics, and show it is representative of real-world code. ExeBench contains 4.5M compilable and 700k executable C functions. This scale of executable, real functions will enable the next generation of machine learning-based programming tasks.},
+booktitle = {Proceedings of the 6th ACM SIGPLAN International Symposium on Machine Programming},
+pages = {50–59},
+numpages = {10},
+keywords = {Program Synthesis, Mining Software Repositories, Machine Learning for Code, Compilers, Code Dataset, C},
+location = {San Diego, CA, USA},
+series = {MAPS 2022}
+}
+
+@article{Hallucinations,
+  title={Exploring and evaluating hallucinations in llm-powered code generation},
+  author={Liu, Fang and Liu, Yang and Shi, Lin and Huang, Houkun and Wang, Ruifeng and Yang, Zhen and Zhang, Li and Li, Zhongqi and Ma, Yuchi},
+  journal={arXiv preprint arXiv:2404.00971},
+  year={2024}
+}
+
+@article{Prompt_injection,
+  title={Prompt injection: Parameterization of fixed inputs},
+  author={Choi, Eunbi and Jo, Yongrae and Jang, Joel and Seo, Minjoon},
+  journal={arXiv preprint arXiv:2206.11349},
+  year={2022}
+}
+
+@misc{Grammar_LLM,
+      title={Grammar-Aligned Decoding}, 
+      author={Kanghee Park and Jiayu Wang and Taylor Berg-Kirkpatrick and Nadia Polikarpova and Loris D'Antoni},
+      year={2024},
+      eprint={2405.21047},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2405.21047}, 
+}
+
+@article{Alpha_geometry,
+  title={Solving olympiad geometry without human demonstrations},
+  author={Trinh, Trieu H and Wu, Yuhuai and Le, Quoc V and He, He and Luong, Thang},
+  journal={Nature},
+  volume={625},
+  number={7995},
+  pages={476--482},
+  year={2024},
+  publisher={Nature Publishing Group UK London}
+}
+
+@inproceedings{CSmith,
+  title={Finding and understanding bugs in C compilers},
+  author={Yang, Xuejun and Chen, Yang and Eide, Eric and Regehr, John},
+  booktitle={Proceedings of the 32nd ACM SIGPLAN conference on Programming language design and implementation},
+  pages={283--294},
+  year={2011}
+}
+
+@article{Neutron,
+  title={Neutron: an attention-based neural decompiler},
+  author={Liang, Ruigang and Cao, Ying and Hu, Peiwei and Chen, Kai},
+  journal={Cybersecurity},
+  volume={4},
+  pages={1--13},
+  year={2021},
+  publisher={Springer}
+}
+
+@inproceedings{Retargetable,
+  title={Design of an automatically generated retargetable decompiler},
+  author={{\v{D}}urfina, Luk{\'a}{\v{s}} and K{\v{r}}oustek, Jakub and Zemek, Petr and Kol{\'a}{\v{r}}, Du{\v{s}}an and Hru{\v{s}}ka, Tom{\'a}{\v{s}} and Masa{\v{r}}{\'\i}k, Karel and Meduna, Alexander},
+  booktitle={Proceedings of the 2nd international conference on Circuits, Systems, Communications \& Computers},
+  pages={199--204},
+  year={2011}
+}
+
+@inproceedings{RetDec,
+  title={Retdec: An open-source machine-code decompiler},
+  author={K{\v{r}}oustek, Jakub and Matula, Peter and Zemek, Petr},
+  booktitle={July 2018},
+  year={2017}
+}
+
+@inproceedings {DHelix,
+author = {Muqi Zou and Arslan Khan and Ruoyu Wu and Han Gao and Antonio Bianchi and Dave (Jing) Tian},
+title = {{D-Helix}: A Generic Decompiler Testing Framework Using Symbolic Differentiation},
+booktitle = {33rd USENIX Security Symposium (USENIX Security 24)},
+year = {2024},
+isbn = {978-1-939133-44-1},
+address = {Philadelphia, PA},
+pages = {397--414},
+url = {https://www.usenix.org/conference/usenixsecurity24/presentation/zou},
+publisher = {USENIX Association},
+month = aug
+}
+
+@INPROCEEDINGS{Metrics,
+  author={Naeem, Nomair A. and Batchelder, Michael and Hendren, Laurie},
+  booktitle={15th IEEE International Conference on Program Comprehension (ICPC '07)}, 
+  title={Metrics for Measuring the Effectiveness of Decompilers and Obfuscators}, 
+  year={2007},
+  volume={},
+  number={},
+  pages={253-258},
+  keywords={Java;Reverse engineering;Software engineering;Computer science;Particle measurements;Software measurement;Software metrics;Displays;Programming profession;Sun},
+  doi={10.1109/ICPC.2007.27}}
+
+@inproceedings{Cognitive,
+author = {Campbell, G. Ann},
+title = {Cognitive complexity: an overview and evaluation},
+year = {2018},
+isbn = {9781450357135},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3194164.3194186},
+doi = {10.1145/3194164.3194186},
+abstract = {As a measure of understandability, Cyclomatic Complexity is widely regarded as unsatisfactory, but until December 2016 it was the only one available. This paper describes Cognitive Complexity, a new metric designed specifically to measure understandability, and a brief survey of Cognitive Complexity issues in a subset of open source projects under static analysis on SonarCloud. From this analysis, an assessment is made of whether Cognitive Complexity is accepted or rejected by the developers of each project.},
+booktitle = {Proceedings of the 2018 International Conference on Technical Debt},
+pages = {57–58},
+numpages = {2},
+location = {Gothenburg, Sweden},
+series = {TechDebt '18}
+}
+
+@article{InContextLearning,
+  title={A survey on in-context learning},
+  author={Dong, Qingxiu and Li, Lei and Dai, Damai and Zheng, Ce and Ma, Jingyuan and Li, Rui and Xia, Heming and Xu, Jingjing and Wu, Zhiyong and Liu, Tianyu and others},
+  journal={arXiv preprint arXiv:2301.00234},
+  year={2022}
+}
+
+@article{LoRA,
+  title={Lora: Low-rank adaptation of large language models},
+  author={Hu, Edward J and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Wang, Lu and Chen, Weizhu},
+  journal={arXiv preprint arXiv:2106.09685},
+  year={2021}
+}
+
+@inproceedings{DeGPT,
+  title={DeGPT: Optimizing Decompiler Output with LLM},
+  author={Hu, Peiwei and Liang, Ruigang and Chen, Kai},
+  booktitle={Proceedings 2024 Network and Distributed System Security Symposium (2024). https://api. semanticscholar. org/CorpusID},
+  volume={267622140},
+  year={2024}
+}

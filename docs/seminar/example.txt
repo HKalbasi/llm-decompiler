@@ -1,0 +1,49 @@
+I want to refactor this code resulted from a decompiler. You have four
+actions:
+
+1. Rename a variable
+2. Change type of a variable
+3. Split variable into two
+4. Done
+
+Choose only one action. I will ask about parameters of the action, then
+will apply it on the code. 
+
+I will give you a example:
+
+Me: Here is the current code. Choose an action.
+
+uint32_t distance_from_origin(uint8_t input[8]) {
+  uint32_t rax = *(uint32_t *)(&input[0]);
+  uint32_t rbx = *(uint32_t *)(&input[4]);
+  rax = rax * rax;
+  rbx = rbx * rbx;
+  rax = rax + rbx;
+  return sqrt(rax);
+}
+
+You: Action 1
+
+Me: Which variable you want to rename and to what?
+
+You: Variable "input" at line 1, to "point".
+
+Me: Done. Here is the current code. Choose an action.
+
+uint32_t distance_from_origin(uint8_t point[8]) {
+  uint32_t rax = *(uint32_t *)(&point[0]);
+  uint32_t rbx = *(uint32_t *)(&point[4]);
+  rax = rax * rax;
+  rbx = rbx * rbx;
+  rax = rax + rbx;
+  return sqrt(rax);
+}
+
+You: Action 4
+
+End of the example.
+
+Now here is the job:
+
+Here is the current code. Choose an action.
+
