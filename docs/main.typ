@@ -49,8 +49,6 @@
 #pagebreak()
 #include "chapters/layer.typ"
 #pagebreak()
-#include "chapters/asm_to_ir.typ"
-#pagebreak()
 #include "chapters/ir_passes.typ"
 #pagebreak()
 #include "chapters/ir_to_c.typ"
