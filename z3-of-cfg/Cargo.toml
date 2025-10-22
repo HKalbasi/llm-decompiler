@@ -1,9 +1,8 @@
 [package]
-name = "try14"
+name = "z3-of-cfg"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-la-arena = "0.3.1"
 my_cfg = { version = "0.1.0", path = "../my_cfg" }
-z3-of-cfg = { version = "0.1.0", path = "../z3-of-cfg" }
+z3 = "0.19.2"

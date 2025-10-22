@@ -52,8 +52,12 @@ pub fn remove_unneeded_locals(cfg: &mut Cfg) {
                 }
             }
             match bb.terminator.as_mut().unwrap() {
-                my_cfg::Terminator::Return | my_cfg::Terminator::Goto { bb: _ } => {},
-                my_cfg::Terminator::If { cond, then: _, else_: _ } => {
+                my_cfg::Terminator::Return | my_cfg::Terminator::Goto { bb: _ } => {}
+                my_cfg::Terminator::If {
+                    cond,
+                    then: _,
+                    else_: _,
+                } => {
                     *cond = cond.replace_local(old_local, Value::from_local(new_local));
                 }
             }
@@ -62,6 +66,10 @@ pub fn remove_unneeded_locals(cfg: &mut Cfg) {
 }
 
 fn is_local_value_read_by_block(l: Idx<Local>, cfg: &Cfg) -> bool {
+    if l.to_usize() == 0 {
+        return true;
+    }
+
     cfg.bb.iter().any(|(_, bb)| {
         for stmt in &bb.stmts {
             match stmt {

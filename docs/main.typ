@@ -45,8 +45,6 @@
 #pagebreak()
 #include "chapters/prevent_halucination.typ"
 #pagebreak()
-#include "chapters/works.typ"
-#pagebreak()
 #include "chapters/layer.typ"
 #pagebreak()
 #include "chapters/ir_passes.typ"

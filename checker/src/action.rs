@@ -22,10 +22,13 @@ impl RefactoringAction {
         let ast = AstRepr::new_single_file(original_code)?;
         let hir = repr::hir::HirCtx::new(&ast).lower_to_hir();
 
-        let hir = *hir.into_iter().find_map(|it| match it.kind {
-            ItemKind::Func(func_def) => Some(func_def),
-            _ => None,
-        }).unwrap();
+        let hir = *hir
+            .into_iter()
+            .find_map(|it| match it.kind {
+                ItemKind::Func(func_def) => Some(func_def),
+                _ => None,
+            })
+            .unwrap();
 
         Ok(original_code.to_owned())
     }

@@ -123,6 +123,17 @@ pub enum CType {
     Ptr(Box<CType>),
 }
 
+impl CType {
+    pub fn size(&self) -> u8 {
+        match self {
+            CType::Void => 1,
+            CType::Float(n) | CType::Int(n) | CType::UInt(n) => *n,
+            CType::Bool => 1,
+            CType::Ptr(_) => 8,
+        }
+    }
+}
+
 impl Display for CType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -150,6 +161,24 @@ pub enum Place {
 }
 
 impl Place {
+    pub fn ty(&self, mir: &Cfg) -> CType {
+        match self {
+            Place::Local(idx) => mir.locals[*idx].ty.clone(),
+            Place::Deref(place) => {
+                let CType::Ptr(ty) = place.ty(mir) else {
+                    panic!("Invalid deref with non pointer type");
+                };
+                *ty
+            }
+            Place::Offset(place, _) => {
+                let CType::Ptr(ty) = place.ty(mir) else {
+                    panic!("Invalid deref with non pointer type");
+                };
+                CType::Ptr(ty)
+            }
+        }
+    }
+
     pub fn as_local(&self) -> Option<Idx<Local>> {
         let Place::Local(p) = self else { return None };
         Some(*p)
@@ -200,7 +229,6 @@ pub enum Binop {
     Div,
     Lt,
     Le,
-    
 }
 
 impl Display for Binop {
@@ -224,6 +252,14 @@ pub enum Value {
 }
 
 impl Value {
+    pub fn ty(&self, cfg: &Cfg) -> CType {
+        match self {
+            Value::Place(place) => place.ty(cfg),
+            Value::Literal(_) => CType::Int(4),
+            Value::Binop(value, _, _) => value.ty(cfg),
+        }
+    }
+
     pub fn as_place(&self) -> Option<&Place> {
         let Value::Place(p) = self else { return None };
         Some(p)
@@ -279,8 +315,14 @@ pub enum Stmt {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum Terminator {
     Return,
-    Goto { bb: Idx<BasicBlock> },
-    If { cond: Value, then: Idx<BasicBlock>, else_: Idx<BasicBlock> },
+    Goto {
+        bb: Idx<BasicBlock>,
+    },
+    If {
+        cond: Value,
+        then: Idx<BasicBlock>,
+        else_: Idx<BasicBlock>,
+    },
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
@@ -328,15 +370,17 @@ impl Cfg {
                 }
             }
             match &bb.terminator {
-                Some(terminator) => {
-                    match terminator {
-                        Terminator::Return => println!("        return;"),
-                        Terminator::Goto { bb } => {
-                            println!("        goto bb{};", bb.to_usize());
-                        },
-                        Terminator::If { cond, then, else_ } => {
-                            println!("        if {cond} {{ goto bb{} }} else {{ goto bb{} }}", then.to_usize(), else_.to_usize());
-                        },
+                Some(terminator) => match terminator {
+                    Terminator::Return => println!("        return;"),
+                    Terminator::Goto { bb } => {
+                        println!("        goto bb{};", bb.to_usize());
+                    }
+                    Terminator::If { cond, then, else_ } => {
+                        println!(
+                            "        if {cond} {{ goto bb{} }} else {{ goto bb{} }}",
+                            then.to_usize(),
+                            else_.to_usize()
+                        );
                     }
                 },
                 None => println!("        <incomplete mir terminator>"),
