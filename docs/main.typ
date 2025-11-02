@@ -8,7 +8,7 @@
 )
 
 #set par(
-  first-line-indent: (amount: 1.5em, all: true),
+  first-line-indent: 1.5em,
   leading: 15pt,
   justify: true,
 )
