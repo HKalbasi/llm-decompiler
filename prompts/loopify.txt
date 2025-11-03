@@ -1,0 +1,62 @@
+You will give a cfg and you should loopify it. cfg contains some basic
+blocks and you should return something like this:
+
+```
+bb0;
+loop {
+  if bb1 {
+    bb2;
+    continue;
+  } else {
+    bb3;
+    return;
+  }
+}
+```
+
+which is a dsl for loopifying cfgs.
+
+Here is the full grammar of the dsl.
+
+```
+ROOT := STATEMENT_LIST
+STATEMENT_LIST := "" | STATEMENT STATEMENT_LIST
+STATEMENT := SIMPLE_STATEMENT ";" | IF | LOOP | WHILE
+SIMPLE_STATEMENT := BASIC_BLOCK | "continue" | "break"
+IF := "if" BASIC_BLOCK BLOCK | "if" BASIC_BLOCK BLOCK "else" BLOCK
+LOOP := "loop" BLOCK
+WHILE := "while" BASIC_BLOCK BLOCK
+BLOCK := "{" STATEMENT_LIST "}"
+```
+
+Some notes:
+* Prefer the most compact and most human readable form
+  * Minimize usage of break and continue, prefer while
+* Don't miss or duplicate any basic block, otherwise your code will be rejected.
+* After thinking, only return the result with no explanation.
+
+and here is your task:
+
+```
+fn sub {
+    let _0: *mut f64
+    let _1: *mut f64
+    let _2: i32
+    bb0: {
+        _2 = 0;
+        _2 = 0;
+        goto bb1;
+    }
+    bb1: {
+        if _2 < 3 { goto bb2 } else { goto bb3 }
+    }
+    bb2: {
+        *_0.offset(_2) = *_0.offset(_2) / *_1.offset(3 + _2) + *_1.offset(_2);
+        _2 = _2 + 1;
+        goto bb1;
+    }
+    bb3: {
+        return;
+    }
+}
+```

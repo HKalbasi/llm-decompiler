@@ -7,8 +7,26 @@
   size: 13.5pt,
 )
 
+#show figure.where(
+  kind: table,
+): set figure(supplement: "جدول")
+
+#show figure.where(
+  kind: image,
+): set figure(supplement: "تصویر")
+
+#show figure: set figure(numbering: "۱")
+
+#show figure: it => block(width: 100%)[#align(center)[
+  #it.body
+  #text(size: .8em, [
+    #strong([#it.supplement #it.counter.display(it.numbering):])
+    #it.caption.body
+  ])
+]]
+
 #set par(
-  first-line-indent: 1.5em,
+  first-line-indent: (amount: 1.5em, all: true),
   leading: 15pt,
   justify: true,
 )
@@ -25,6 +43,17 @@
 #heading(outlined: false)[فهرست مطالب]
 
 #outline(title: none)
+
+#outline(
+  title: [فهرست تصاویر],
+  target: figure.where(kind: image),
+)
+
+#outline(
+  title: [فهرست جداول],
+  target: figure.where(kind: table),
+)
+
 
 #pagebreak()
 
