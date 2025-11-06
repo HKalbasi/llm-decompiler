@@ -37,12 +37,15 @@
 #include "heading.typ"
 #pagebreak()
 
+#include "thanks.typ"
+#pagebreak()
+
 #include "summary.typ"
 #pagebreak()
 
-#heading(outlined: false)[فهرست مطالب]
+#outline(title: [فهرست مطالب])
 
-#outline(title: none)
+#pagebreak()
 
 #outline(
   title: [فهرست تصاویر],
@@ -70,8 +73,8 @@
 
 #include "chapters/intro.typ"
 #pagebreak()
-#include "chapters/prev.typ"
-#pagebreak()
+// #include "chapters/prev.typ"
+// #pagebreak()
 #include "chapters/prevent_halucination.typ"
 #pagebreak()
 #include "chapters/layer.typ"
@@ -93,3 +96,15 @@
   #bibliography("ref.bib", title: none)
 
 ]
+
+#pagebreak()
+
+#set page(numbering: none)
+#set text(lang: "en")
+
+#include "summary_en.typ"
+
+#pagebreak()
+
+#include "heading_en.typ"
+
