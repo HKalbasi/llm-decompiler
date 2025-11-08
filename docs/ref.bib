@@ -318,3 +318,182 @@ doi = {10.52202/079017-1742}
   note         = {Slide 55 details P-Code and Slide 5 provides the code line count. Available online at: \url{https://raw.githubusercontent.com/0xAlexei/INFILTRATE2019/master/INFILTRATE\%20Ghidra\%20Slides.pdf}},
   url          = {https://raw.githubusercontent.com/0xAlexei/INFILTRATE2019/master/INFILTRATE\%20Ghidra\%20Slides.pdf}
 }
+
+@unknown{unknown,
+author = {Wei, Anjiang and Nie, Allen and Teixeira, Thiago and Yadav, Rohan and Lee, Wonchan and Wang, Ke and Aiken, Alex},
+year = {2024},
+month = {10},
+pages = {},
+title = {Improving Parallel Program Performance Through DSL-Driven Code Generation with LLM Optimizers},
+doi = {10.48550/arXiv.2410.15625}
+}
+
+@unknown{ParallelDSL,
+author = {Wei, Anjiang and Nie, Allen and Teixeira, Thiago and Yadav, Rohan and Lee, Wonchan and Wang, Ke and Aiken, Alex},
+year = {2024},
+month = {10},
+pages = {},
+title = {Improving Parallel Program Performance Through DSL-Driven Code Generation with LLM Optimizers},
+doi = {10.48550/arXiv.2410.15625}
+}
+
+@inproceedings{autodsl,
+    title = "{A}uto{DSL}: Automated domain-specific language design for structural representation of procedures with constraints",
+    author = "Shi, Yu-Zhe  and
+      Hou, Haofei  and
+      Bi, Zhangqian  and
+      Meng, Fanxu  and
+      Wei, Xiang  and
+      Ruan, Lecheng  and
+      Wang, Qining",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.acl-long.659/",
+    doi = "10.18653/v1/2024.acl-long.659",
+    pages = "12177--12214",
+    abstract = "Accurate representation of procedures in restricted scenarios, such as non-standardized scientific experiments, requires precise depiction of constraints. Unfortunately, Domain-specific Language (DSL), as an effective tool to express constraints structurally, often requires case-by-case hand-crafting, necessitating customized, labor-intensive efforts. To overcome this challenge, we introduce the AutoDSL framework to automate DSL-based constraint design across various domains. Utilizing domain specified experimental protocol corpora, AutoDSL optimizes syntactic constraints and abstracts semantic constraints. Quantitative and qualitative analyses of the DSLs designed by AutoDSL across five distinct domains highlight its potential as an auxiliary module for language models, aiming to improve procedural planning and execution."
+}
+
+@inproceedings{Emscripten,
+author = {Zakai, Alon},
+year = {2011},
+month = {10},
+pages = {301-312},
+title = {Emscripten: an LLVM-to-JavaScript compiler},
+doi = {10.1145/2048147.2048224}
+}
+
+@article{beyond_relooper,
+author = {Ramsey, Norman},
+title = {Beyond Relooper: recursive translation of unstructured control flow to structured control flow (functional pearl)},
+year = {2022},
+issue_date = {August 2022},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {6},
+number = {ICFP},
+url = {https://doi.org/10.1145/3547621},
+doi = {10.1145/3547621},
+abstract = {In many compilers, control flow is represented using an arbitrary   directed graph. But in some interesting target languages, including   JavaScript and WebAssembly, intraprocedural control flow can be   expressed only in structured ways, using loops, conditionals, and   multilevel breaks or exits. As was shown by Peterson, Kasami, and   Tokura in 1973, such structured control flow can be obtained by   translating arbitrary control flow. The translation uses two standard   analyses, but as published, it takes three passes—which may explain   why it was overlooked by Emscripten, a popular compiler from C to   JavaScript. By tweaking the analyses and by applying fundamental ideas   from functional programming (recursive functions and immutable   abstract-syntax trees), the translation, along with a couple of code   improvements, can be implemented in a single pass. This new   implementation is slated to be added to the Glasgow Haskell   Compiler. Its single-pass translation, its immutable representation,   and its use of dominator trees make it much easier to reason about   than the original translation.},
+journal = {Proc. ACM Program. Lang.},
+month = aug,
+articleno = {90},
+numpages = {22},
+keywords = {Haskell, WebAssembly, control-flow analysis, dominator tree, reverse postorder numbering}
+}
+
+@article{SSA,
+author = {Cytron, Ron and Ferrante, Jeanne and Rosen, Barry K. and Wegman, Mark N. and Zadeck, F. Kenneth},
+title = {Efficiently computing static single assignment form and the control dependence graph},
+year = {1991},
+issue_date = {Oct. 1991},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {13},
+number = {4},
+issn = {0164-0925},
+url = {https://doi.org/10.1145/115372.115320},
+doi = {10.1145/115372.115320},
+journal = {ACM Trans. Program. Lang. Syst.},
+month = oct,
+pages = {451–490},
+numpages = {40},
+keywords = {optimizing compilers, dominator, def-use chain, control flow graph, control dependence}
+}
+
+@article{10.1145/390013.808479,
+author = {Allen, Frances E.},
+title = {Control flow analysis},
+year = {1970},
+issue_date = {July 1970},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {5},
+number = {7},
+issn = {0362-1340},
+url = {https://doi.org/10.1145/390013.808479},
+doi = {10.1145/390013.808479},
+abstract = {Any static, global analysis of the expression and data relationships in a program requires a knowledge of the control flow of the program. Since one of the primary reasons for doing such a global analysis in a compiler is to produce optimized programs, control flow analysis has been embedded in many compilers and has been described in several papers. An early paper by Prosser [5] described the use of Boolean matrices (or, more particularly, connectivity matrices) in flow analysis. The use of “dominance” relationships in flow analysis was first introduced by Prosser and much expanded by Lowry and Medlock [6]. References [6,8,9] describe compilers which use various forms of control flow analysis for optimization. Some recent developments in the area are reported in [4] and in [7].The underlying motivation in all the different types of control flow analysis is the need to codify the flow relationships in the program. The codification may be in connectivity matrices, in predecessor-successor tables, in dominance lists, etc. Whatever the form, the purpose is to facilitate determining what the flow relationships are; in other words to facilitate answering such questions as: is this an inner loop?, if an expression is removed from the loop where can it be correctly and profitably placed?, which variable definitions can affect this use?In this paper the basic control flow relationships are expressed in a directed graph. Various graph constructs are then found and shown to codify interesting global relationships.},
+journal = {SIGPLAN Not.},
+month = jul,
+pages = {1–19},
+numpages = {19}
+}
+
+@inproceedings{CFG,
+author = {Allen, Frances E.},
+title = {Control flow analysis},
+year = {1970},
+isbn = {9781450373869},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/800028.808479},
+doi = {10.1145/800028.808479},
+abstract = {Any static, global analysis of the expression and data relationships in a program requires a knowledge of the control flow of the program. Since one of the primary reasons for doing such a global analysis in a compiler is to produce optimized programs, control flow analysis has been embedded in many compilers and has been described in several papers. An early paper by Prosser [5] described the use of Boolean matrices (or, more particularly, connectivity matrices) in flow analysis. The use of “dominance” relationships in flow analysis was first introduced by Prosser and much expanded by Lowry and Medlock [6]. References [6,8,9] describe compilers which use various forms of control flow analysis for optimization. Some recent developments in the area are reported in [4] and in [7].The underlying motivation in all the different types of control flow analysis is the need to codify the flow relationships in the program. The codification may be in connectivity matrices, in predecessor-successor tables, in dominance lists, etc. Whatever the form, the purpose is to facilitate determining what the flow relationships are; in other words to facilitate answering such questions as: is this an inner loop?, if an expression is removed from the loop where can it be correctly and profitably placed?, which variable definitions can affect this use?In this paper the basic control flow relationships are expressed in a directed graph. Various graph constructs are then found and shown to codify interesting global relationships.},
+booktitle = {Proceedings of a Symposium on Compiler Optimization},
+pages = {1–19},
+numpages = {19},
+location = {Urbana-Champaign, Illinois}
+}
+
+@misc{AttackLLM,
+      title={Universal and Transferable Adversarial Attacks on Aligned Language Models}, 
+      author={Andy Zou and Zifan Wang and Nicholas Carlini and Milad Nasr and J. Zico Kolter and Matt Fredrikson},
+      year={2023},
+      eprint={2307.15043},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2307.15043}, 
+}
+
+@misc{BypassDefendLLM,
+      title={The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against Llm Jailbreaks and Prompt Injections}, 
+      author={Milad Nasr and Nicholas Carlini and Chawin Sitawarin and Sander V. Schulhoff and Jamie Hayes and Michael Ilie and Juliette Pluto and Shuang Song and Harsh Chaudhari and Ilia Shumailov and Abhradeep Thakurta and Kai Yuanqing Xiao and Andreas Terzis and Florian Tramèr},
+      year={2025},
+      eprint={2510.09023},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2510.09023}, 
+}
+
+@inproceedings{DefendLLM,
+    title = "Defense Against Prompt Injection Attack by Leveraging Attack Techniques",
+    author = "Chen, Yulin  and
+      Li, Haoran  and
+      Zheng, Zihao  and
+      Wu, Dekai  and
+      Song, Yangqiu  and
+      Hooi, Bryan",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.897/",
+    doi = "10.18653/v1/2025.acl-long.897",
+    pages = "18331--18347",
+    ISBN = "979-8-89176-251-0",
+    abstract = "With the advancement of technology, large language models (LLMs) have achieved remarkable performance across various natural language processing (NLP) tasks, powering LLM-integrated applications like Microsoft Copilot. However, as LLMs continue to evolve, new vulnerabilities, especially prompt injection attacks arise. These attacks trick LLMs into deviating from the original input instructions and executing the attacker{'}s instructions injected in data content, such as retrieved results. Recent attack methods leverage LLMs' instruction-following abilities and their inabilities to distinguish instructions injected in the data content, and achieve a high attack success rate (ASR). When comparing the attack and defense methods, we interestingly find that they share similar design goals, of inducing the model to ignore unwanted instructions and instead to execute wanted instructions. Therefore, we raise an intuitive question: *Could these attack techniques be utilized for defensive purposes?* In this paper, we invert the intention of prompt injection methods to develop novel defense methods based on previous training-free attack methods, by repeating the attack process but with the original input instruction rather than the injected instruction. Our comprehensive experiments demonstrate that our defense techniques outperform existing defense approaches, achieving state-of-the-art results."
+}
+
+@inproceedings{z3,
+author = {de Moura, Leonardo and Bjørner, Nikolaj},
+year = {2008},
+month = {04},
+pages = {337-340},
+title = {Z3: an efficient SMT solver},
+volume = {4963},
+isbn = {978-3-540-78799-0},
+journal = {Tools and Algorithms for the Construction and Analysis of Systems},
+doi = {10.1007/978-3-540-78800-3_24}
+}
