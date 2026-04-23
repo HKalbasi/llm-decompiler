@@ -7,6 +7,14 @@
   size: 14pt,
 )
 
+#let to-persian(n) = numbering("۱", int(n))
+
+// 2. Apply to all citations in the text
+#show ref: it => {
+  show regex("[0-9]+"): n => to-persian(n.text)
+  it
+}
+
 #show figure.where(
   kind: table,
 ): set figure(supplement: "جدول")
