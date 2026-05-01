@@ -33,11 +33,6 @@
 
   #v(2em)
 
-  دی ۱۴۰۴
-
-]
-
-#block[
-  #box(image("front/template/images/besmellah.jpg"))
+  اسفند ۱۴۰۴
 
 ]

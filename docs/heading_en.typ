@@ -32,7 +32,7 @@
 
   #v(2em)
 
-  December 2025
+  February 2026
 
 ]
 

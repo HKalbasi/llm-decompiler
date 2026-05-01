@@ -45,6 +45,9 @@
 #include "heading.typ"
 #pagebreak()
 
+#include "signature.typ"
+#pagebreak()
+
 #include "thanks.typ"
 #pagebreak()
 
@@ -153,47 +156,61 @@
 
     // Table for the entries
     table(
-      columns: (auto, 1fr, auto),
+      columns: (5fr, 1fr, 5fr),
       stroke: none,
       align: (left, center, right),
 
       // Loop through all items for this letter
       ..for item in items {
         (
-          text(dir: ltr)[#item.en], // English part (LTR)
-          [......], // Dotted line
           item.fa, // Persian part (RTL)
+          [......], // Dotted line
+          text(dir: ltr)[#item.en], // English part (LTR)
         )
       }
     )
   }
 
-  let all-letters = groups.keys().sorted()
-  let mid-point = calc.ceil(all-letters.len() / 2)
-  let col1-letters = all-letters.slice(0, mid-point)
-  let col2-letters = all-letters.slice(mid-point)
+  let persian-order = (
+    "ا": 1, "ب": 2, "پ": 3, "ت": 4, "ث": 5,
+    "ج": 6, "چ": 7, "ح": 8, "خ": 9, "د": 10,
+    "ذ": 11, "ر": 12, "ز": 13, "ژ": 14, "س": 15,
+    "ش": 16, "ص": 17, "ض": 18, "ط": 19, "ظ": 20,
+    "ع": 21, "غ": 22, "ف": 23, "ق": 24, "ک": 25,
+    "گ": 26, "ل": 27, "م": 28, "ن": 29, "و": 30,
+    "ه": 31, "ی": 32,
+  )
+
+  let sort-key(word) = (
+    word.codepoints().map(c => persian-order.at(c, default: 1))
+  )
+
+  let all-letters = groups.keys().sorted(key: sort-key)
+  // let mid-point = calc.ceil(all-letters.len() / 2)
+  // let col1-letters = all-letters.slice(0, mid-point)
+  // let col2-letters = all-letters.slice(mid-point)
 
   // Create the 2-column grid
   grid(
-    columns: (1fr, 1fr),
+    columns: (1fr),
     gutter: 3em,
 
     // RIGHT COLUMN (First half of the alphabet)
     // (This is the first grid item, so it appears right in RTL)
     [
-      #for letter in col1-letters {
+      #for letter in all-letters   {
         format-group(letter, groups.at(letter))
         v(2em) // Space between letter sections
       }
     ],
 
     // LEFT COLUMN (Second half of the alphabet)
-    [
-      #for letter in col2-letters {
-        format-group(letter, groups.at(letter))
-        v(2em) // Space between letter sections
-      }
-    ],
+    // [
+    //   #for letter in col2-letters {
+    //     format-group(letter, groups.at(letter))
+    //     v(2em) // Space between letter sections
+    //   }
+    // ],
   )
 }
 
