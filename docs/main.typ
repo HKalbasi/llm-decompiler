@@ -33,20 +33,22 @@
   ])
 ]]
 
+#show heading: set block(above: 36pt, below: 32pt)
+#show heading.where(level: 1): set text(size: 24pt)
+
+#include "heading.typ"
+
+#include "besmellah.typ"
+#pagebreak()
+
+#include "signature.typ"
+#pagebreak()
+
 #set par(
   first-line-indent: (amount: 1.5em, all: true),
   leading: 15pt,
   justify: true,
 )
-
-#show heading: set block(above: 36pt, below: 32pt)
-#show heading.where(level: 1): set text(size: 24pt)
-
-#include "heading.typ"
-#pagebreak()
-
-#include "signature.typ"
-#pagebreak()
 
 #include "thanks.typ"
 #pagebreak()
